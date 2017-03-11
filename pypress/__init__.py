@@ -197,7 +197,7 @@ def configure_errorhandlers(app):
     @app.errorhandler(401)
     def unauthorized(error):
         if request.is_xhr:
-            return jsonfiy(error=_("Login required"))
+            return jsonify(error=_("Login required"))
         flash(_("Please login to see this page"), "error")
         return redirect(url_for("account.login", next=request.path))
   
